@@ -7,7 +7,9 @@ app = Flask("FuckPingJiao")
 
 @app.route("/")
 def api():
-    sid = request.args.get("SID")
+    sid = request.args.get("SID", None)
+    if not sid:
+        return "Add student id: ?SID=your-student-id"
     return str(main(sid))
 
 
