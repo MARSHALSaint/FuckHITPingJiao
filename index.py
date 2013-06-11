@@ -113,7 +113,18 @@ def main():
     re_1 = step1(cdct)
     re_2 = step2(cdct)
     re_3 = step3(cdct)
-    return "ok"
+
+    relst = [re_1.status_code, re_2.status_code, re_3.status_code]
+
+    re_codes = []
+
+    for i in relst:
+        if i == 200:
+            re_codes.append(0)
+        else:
+            re_codes.append(1)
+
+    return str(sum(re_codes))
 
 
 if __name__ == '__main__':
