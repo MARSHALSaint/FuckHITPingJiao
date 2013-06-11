@@ -37,6 +37,22 @@ $ python index.py
 访问 http://0.0.0.0:5000/?SID=你的学号
 
 
+使用Gunicorn部署
+----------------
+
+安装gunicorn:
+
+```
+pip install gunicorn
+```
+
+后台运行服务:
+
+```
+gunicorn -w 4 -b 127.0.0.1:5000 -D index:app 
+```
+
+
 关于
 ---
 
