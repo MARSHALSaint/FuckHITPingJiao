@@ -1,16 +1,37 @@
 FuckPingJiao
 ============
 
-Fuck Hit's Ping Jiao(评教) with single Python script.
+Fuck 哈工大之评教
 
-Deploy as Server
-----------------
+安装所需
+--------
 
 ```
-$ virtualenv venv
-$ . venv/bin/activate
-$ pip install -r requirements.txt
+$ pip install requests
+```
+
+单独运行
+--------
+
+```
+$ python fuckpj 110xxxxxxx
+```
+
+注意 `python fuckpj` 后面加上你的学号，不需要密码
+
+
+部署为Web服务
+-------------
+
+需要安装flask
+
+```
+$ pip install flask
+```
+
+
+```
 $ python index.py
 ```
 
-Visit http://0.0.0.0:5000/?SID=110100xxxx
+访问 http://0.0.0.0:5000/?SID=你的学号
