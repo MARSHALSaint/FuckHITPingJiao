@@ -14,10 +14,10 @@ $ pip install requests
 --------
 
 ```
-$ python fuckpj 110xxxxxxx
+$ python fuckpj.py 110xxxxxxx
 ```
 
-注意 `python fuckpj` 后面加上你的学号，不需要密码
+注意 `python fuckpj.py` 后面加上你的学号，不需要密码
 
 
 部署为Web服务
@@ -35,3 +35,11 @@ $ python index.py
 ```
 
 访问 http://0.0.0.0:5000/?SID=你的学号
+
+
+关于
+---
+
+- 评教后并未作最后提交，但这不影响期末查询成绩。
+
+- 评教全部随机数据，数据质量不会太差
