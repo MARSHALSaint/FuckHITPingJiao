@@ -37,7 +37,6 @@ def step2(cookies):
     uri_get = "http://xscj.hit.edu.cn/hitjwgl/xs/pj/PJKC4.asp"
     res = requests.get(uri_get, cookies=cookies)
     html = res.text  # repsonse html
-
     data = {}  # build our post data
     lst = re.findall(pattern, html)  # find out the inputs
     data.update(dict((x[0], x[1]) for x in lst))
@@ -66,15 +65,20 @@ def step3(cookies):
     # how many his courses are
     number = int(data["ALLRS"])
 
-    # best: 0-1 teacher
-    # good: 2-4 teachers
+    if number >= 5:  # at least 5 courses
+        # best: 0-1 teacher
+        # good: 2-4 teachers
 
-    # make a list of number size
-    l = [0] * number
-    l[0] = 6
-    l[1] = l[2] = l[3] = l[4] =  5
-    for i in range(5, number):
-        l[i] = 4
+        # make a list of number size
+        l = [0] * number
+        l[0] = 6
+        l[1] = l[2] = l[3] = l[4] =  5
+        for i in range(5, number):
+            l[i] = 4
+    elif  1 <= number <= 4:
+        l = [6] + [5] * (number-1)
+    elif number == 0:
+        l = []
     # shuffle it
     shuffle(l)
 
